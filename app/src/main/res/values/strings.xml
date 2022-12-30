@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BlockWeb</string>
+    <string name="accessibility_service_label">BlockWeb</string>
+    <string name="accessibility_service_description">To make sure you can block websites, please enable accessibility to allow BlockWeb to prevent you from accessing these sites. Please enable the permission</string>
+    <string name="white_list_text">In whitelist mode, <b> the websites in the list are allowed </b> but all other websites are blocked.</string>
+    <string name="backPress_msg">Press back again to exit app.</string>
+</resources>

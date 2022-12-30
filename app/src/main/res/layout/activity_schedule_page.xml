@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="20dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Schedule"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:background="@drawable/box_border_black"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STARTS"
+                        android:textColor="@color/lite_black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/from"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="22sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ENDS"
+                            android:textColor="@color/lite_black"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/to"
+                            android:gravity="end"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="22sp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/grey"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:textSize="17sp"
+                    android:id="@+id/edit"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:textColor="#036FF4"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:id="@+id/delete"
+                    android:clickable="true"
+                    android:textSize="17sp"
+                    android:layout_alignParentRight="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:textColor="#E91E63"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Websites"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="13sp"
+            android:textColor="@color/grey"
+            android:text="(All sub domain will be included)"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/box_border_black"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="www."
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/www"
+                android:textSize="17sp"
+                android:textColor="@color/grey"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:textSize="16sp"
+                android:id="@+id/editText"
+                android:hint="Enter Website"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/add"
+                android:background="@null"
+                android:layout_toRightOf="@+id/www"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:textSize="16sp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/add"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                android:textColor="#036FF4"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:lineHeight="25dp"
+            android:textSize="16sp"
+            android:textColor="@color/blue"
+            android:id="@+id/web_list"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Edit list)"
+                android:id="@+id/edit_list"
+                android:clickable="true"
+                android:textSize="15sp"
+                android:layout_alignParentRight="true"
+                android:background="?attr/selectableItemBackground"
+                android:textColor="#E91E63"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/baloo_bhai_2_semibold"
+            android:text="Mode"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="32sp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/white_text"
+                android:textSize="17sp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/s"
+                android:textStyle="bold"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/grey"
+                android:text="Whitelist"/>
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:thumb="@drawable/thumb"
+                android:switchMinWidth="100dp"
+                android:track="@drawable/track"
+                android:checked="true"
+                android:id="@+id/s"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/black_text"
+                android:gravity="right"
+                android:textSize="17sp"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/s"
+                android:textColor="@color/black"
+                android:text="Blacklist"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/details"
+            android:layout_marginBottom="30dp"
+            android:textSize="16sp"
+            android:textColor="@color/lite_black"
+            android:layout_marginTop="25dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
