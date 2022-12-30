@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
+import com.blockweb.android.Activity.AccessDenied;
+import com.blockweb.android.Activity.MainActivity;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -107,17 +110,28 @@ public class BlockWebHelper extends AccessibilityService {
 
     private void redirect()
     {
-        try {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.my-store.in/access-denied"));
-            intent.setPackage("com.android.chrome");
-            intent.putExtra(Browser.EXTRA_APPLICATION_ID, "com.android.chrome");
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
+        try
+        {
+            Intent intent = new Intent(getApplicationContext(), AccessDenied.class);
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            getApplicationContext().startActivity(intent);
         }
-        catch(ActivityNotFoundException e) {
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.my-store.in/access-denied"));
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(i);
+        catch (Exception e)
+        {
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.my-store.in/access-denied"));
+                intent.setPackage("com.android.chrome");
+                intent.putExtra(Browser.EXTRA_APPLICATION_ID, "com.android.chrome");
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+            catch(ActivityNotFoundException v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.my-store.in/access-denied"));
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(i);
+            }
         }
     }
 

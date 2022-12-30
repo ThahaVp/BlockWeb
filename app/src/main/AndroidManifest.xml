@@ -9,14 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BlockWeb">
-        <activity android:name=".Activity.SchedulePage"></activity>
-        <activity android:name=".Activity.SplashScreen" >
+        <activity android:name=".Activity.AccessDenied"></activity>
+        <activity android:name=".Activity.SchedulePage" />
+        <activity android:name=".Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.MainActivity"/>
+        <activity android:name=".Activity.MainActivity" />
 
         <service
             android:name=".Helper.BlockWebHelper"
